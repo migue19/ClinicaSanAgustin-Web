@@ -41,14 +41,23 @@ header{
 .cta{padding:10px 16px; border-radius:999px; background:var(--brand); color:#fff; font-weight:600; box-shadow:var(--shadow-sm)}
 .cta:hover{opacity:.92}
 .burger{display:none; background:none;border:0; font-size:24px}
-@media (max-width:860px){
-  .menu{display:none}
-  .burger{display:block}
-  .mobile{display:none; position:absolute; inset: 64px 0 auto 0; padding:16px; background:#fff; border-bottom:1px solid #eee}
-  .mobile a{display:block; padding:12px 8px}
-  .mobile .cta{display:inline-block; margin-top:4px}
-  .mobile.open{display:block}
+/* ...existing code... */
+.mobile { display: none; }
+@media (max-width: 860px) {
+  .menu { display: none; }
+  .burger { display: block; }
+  .mobile { 
+    display: none; 
+    position: absolute; 
+    inset: 64px 0 auto 0; 
+    padding: 16px; 
+    background: #fff; 
+    border-bottom: 1px solid #eee;
+    z-index: 100;
+  }
+  .mobile.open { display: block; }
 }
+/* ...existing code... */
 
 /* Hero */
 .hero{
