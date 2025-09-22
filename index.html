@@ -314,31 +314,37 @@
   </div>
 
   <script>
-    const burger = document.getElementById('burger');
-    const mobile = document.getElementById('mobileMenu');
+    // Mantengo handleSubmit y añado inicialización segura al cargar el DOM
+    document.addEventListener('DOMContentLoaded', function () {
+      // año en footer
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Toggle menú móvil y aria-expanded
-    burger?.addEventListener('click', () => {
-      const isOpen = mobile.classList.toggle('open');
-      mobile.hidden = !isOpen;
-      burger.setAttribute('aria-expanded', String(isOpen));
+      // control menú móvil (si existe)
+      const burger = document.getElementById('burger');
+      const mobile = document.getElementById('mobileMenu');
+      if (burger && mobile) {
+        burger.addEventListener('click', () => {
+          const isOpen = mobile.classList.toggle('open');
+          mobile.hidden = !isOpen;
+          burger.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        mobile.querySelectorAll('a').forEach(a => {
+          a.addEventListener('click', () => {
+            mobile.classList.remove('open');
+            mobile.hidden = true;
+            burger.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
     });
 
-    // Cerrar menú móvil al clicar un enlace
-    document.querySelectorAll('#mobileMenu a').forEach(a => {
-      a.addEventListener('click', () => {
-        mobile.classList.remove('open');
-        mobile.hidden = true;
-        burger.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // Manejo del formulario: abre mailto y ofrece WhatsApp
+    // Función preserved: handleSubmit (no eliminar)
     function handleSubmit(e) {
       e.preventDefault();
       const data = Object.fromEntries(new FormData(e.target).entries());
 
-      // correo principal y copia
       const to = "administracion@sanagustinoficial.com";
       const cc = "dr.sergiotrujillo@sanagustinoficial.com";
       const subj = encodeURIComponent("Nueva solicitud desde la web — " + (data.nombre || "Sin nombre"));
@@ -370,10 +376,6 @@
 
       e.target.reset();
     }
-
-    // año en footer
-    const yearEl = document.getElementById('year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
