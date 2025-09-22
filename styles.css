@@ -101,14 +101,14 @@ header{
 .cta{
   padding: 10px 16px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  background: var(--brand); /* solo azul */
   color: #fff;
   font-weight: 600;
   box-shadow: var(--shadow-sm);
 }
 
 .cta:hover{
-  opacity: .92;
+  opacity: .95;
 }
 
 .burger{
@@ -478,7 +478,8 @@ footer a{
 }
 
 .fab.secondary{
-  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  background: var(--brand); /* botón flotante "Agendar" también en azul sólido */
+  color: #fff;
 }
 
 .note{
