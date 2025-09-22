@@ -531,3 +531,25 @@ textarea:focus {
 .box-shadow-brand {
   box-shadow: 0 12px 30px rgba(11,79,134,0.12);
 }
+
+/* Mostrar mapa de escritorio por defecto, ocultar mapa móvil */
+.map-mobile-section {
+  display: none;
+  padding-top: 0;
+  padding-bottom: 28px;
+}
+
+/* En pantallas pequeñas (móvil) invertir: ocultar mapa de escritorio y mostrar mapa móvil */
+@media (max-width: 860px) {
+  .map-desktop {
+    display: none;
+  }
+  .map-mobile-section {
+    display: block;
+  }
+
+  /* opcional: ajustar altura del iframe en móvil */
+  .map-mobile-section iframe {
+    height: 360px;
+  }
+}

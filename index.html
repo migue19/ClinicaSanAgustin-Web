@@ -246,8 +246,8 @@
             </div>
           </form>
 
-          <!-- Mapa (iframe) -->
-          <div>
+          <!-- Mapa (versión escritorio) -->
+          <div class="map-desktop" aria-hidden="false">
             <iframe
               title="Mapa — Clínica San Agustín"
               src="https://www.google.com/maps?q=Magnolias+13,+Sta.+Cruz+Buenavista,+Puebla+72150&output=embed"
@@ -261,10 +261,32 @@
             <address style="font-style:normal; margin-top:8px;">
               Magnolias 13, Sta. Cruz Buenavista<br>
               Heroica Puebla de Zaragoza, Pue. 72150<br>
-              <a href="https://www.google.com/maps/search/?api=1&query=Magnolias+13,+Sta.+Cruz+Buenavista,+Puebla+72150" target="_blank" rel="noopener">Abrir en Google Maps</a>
+              <a href="https://maps.app.goo.gl/DA9fgriXndRbEeKN6" target="_blank" rel="noopener">Abrir en Google Maps</a>
             </address>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Sección con el mismo mapa pero pensada solo para móvil -->
+    <section id="mapa-movil" class="map-mobile-section" aria-label="Mapa — Clínica San Agustín (móvil)">
+      <div class="container">
+        <h3 class="section-title" style="font-size:16px; margin-bottom:8px;">Ubicación</h3>
+        <iframe
+          title="Mapa móvil — Clínica San Agustín"
+          src="https://www.google.com/maps?q=Magnolias+13,+Sta.+Cruz+Buenavista,+Puebla+72150&output=embed"
+          width="100%"
+          height="320"
+          style="border:0; border-radius:12px; display:block;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <address style="font-style:normal; margin-top:8px;">
+          Magnolias 13, Sta. Cruz Buenavista<br>
+          Heroica Puebla de Zaragoza, Pue. 72150<br>
+          <a href="https://maps.app.goo.gl/DA9fgriXndRbEeKN6" target="_blank" rel="noopener">Abrir en Google Maps</a>
+        </address>
       </div>
     </section>
   </main>
