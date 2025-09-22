@@ -234,15 +234,37 @@
         <h2 class="section-title">Contacto</h2>
         <p class="section-sub">Agenda una evaluación inicial o solicita más información.</p>
 
-        <form id="contactForm" onsubmit="handleSubmit(event)">
-          <div style="display:grid; gap:8px; max-width:520px">
-            <input name="nombre" type="text" placeholder="Nombre" required>
-            <input name="telefono" type="tel" placeholder="Teléfono / WhatsApp" required>
-            <input name="motivo" type="text" placeholder="Motivo de consulta">
-            <textarea name="mensaje" placeholder="Mensaje (opcional)"></textarea>
-            <button class="btn" type="submit">Enviar</button>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; align-items:start;">
+          <!-- Formulario -->
+          <form id="contactForm" onsubmit="handleSubmit(event)" style="max-width:640px; width:100%;">
+            <div style="display:grid; gap:8px;">
+              <input name="nombre" type="text" placeholder="Nombre" required>
+              <input name="telefono" type="tel" placeholder="Teléfono / WhatsApp" required>
+              <input name="motivo" type="text" placeholder="Motivo de consulta">
+              <textarea name="mensaje" placeholder="Mensaje (opcional)"></textarea>
+              <button class="btn" type="submit">Enviar</button>
+            </div>
+          </form>
+
+          <!-- Mapa (iframe) -->
+          <div>
+            <iframe
+              title="Mapa — Clínica San Agustín"
+              src="https://www.google.com/maps?q=Magnolias+13,+Sta.+Cruz+Buenavista,+Puebla+72150&output=embed"
+              width="100%"
+              height="320"
+              style="border:0; border-radius:12px; display:block;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <address style="font-style:normal; margin-top:8px;">
+              Magnolias 13, Sta. Cruz Buenavista<br>
+              Heroica Puebla de Zaragoza, Pue. 72150<br>
+              <a href="https://www.google.com/maps/search/?api=1&query=Magnolias+13,+Sta.+Cruz+Buenavista,+Puebla+72150" target="_blank" rel="noopener">Abrir en Google Maps</a>
+            </address>
           </div>
-        </form>
+        </div>
       </div>
     </section>
   </main>
@@ -257,20 +279,15 @@
         <strong>Contacto</strong>
         <p>WhatsApp: <a href="https://wa.me/522202855303" target="_blank" rel="noopener">220 285 53 03</a></p>
         <p>Tel: <a href="tel:+522202855303">220 285 53 03</a></p>
+        <p>Email: <a href="mailto:administracion@sanagustinoficial.com">administracion@sanagustinoficial.com</a></p>
       </div>
       <div>
-        <strong>Correo electrónico</strong>
-        <p><a href="mailto:administracion@sanagustinoficial.com">administracion@sanagustinoficial.com</a></p>
-        <p><a href="mailto:dr.sergiotrujillo@sanagustinoficial.com">dr.sergiotrujillo@sanagustinoficial.com</a></p>
-
-        <!-- Social -->
-        <div class="social-list" style="margin-top:10px">
-          <strong>Síguenos</strong>
-          <p>
-            <a href="https://www.facebook.com/profile.php?id=61574857032358&locale=es_LA" target="_blank" rel="noopener">Facebook</a>
-          </p>
+        <strong>Síguenos</strong>
+        <div class="social-list" style="margin-top:8px">
+          <p><a href="https://www.facebook.com/profile.php?id=61574857032358&locale=es_LA" target="_blank" rel="noopener">Facebook</a></p>
         </div>
       </div>
+      
     </div>
     <div class="container" style="margin-top:10px; font-size:12px; opacity:.85">
       © <span id="year"></span> Clínica San Agustín. Todos los derechos reservados.
