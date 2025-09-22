@@ -5,162 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Clínica San Agustín — Recupera tu vida con acompañamiento profesional</title>
   <meta name="description" content="Clínica San Agustín: tratamiento integral para adicciones y salud mental. Atención cálida, profesional y confidencial.">
-  <style>
-    :root{
-      --brand:#1f6f78;
-      --brand-2:#40a798;
-      --ink:#1a1a1a;
-      --muted:#5e6a6e;
-      --bg:#fbfbfb;
-      --card:#ffffff;
-      --accent:#f2f8f7;
-      --danger:#b23b3b;
-      --radius:16px;
-      --shadow:0 10px 30px rgba(0,0,0,.08);
-      --shadow-sm:0 6px 18px rgba(0,0,0,.06);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--ink);
-      background:var(--bg);
-      line-height:1.6;
-    }
-    a{color:var(--brand);text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{width:min(1120px, 92%);margin-inline:auto}
-    header{
-      position:sticky; top:0; z-index:50;
-      background:rgba(255,255,255,.85); backdrop-filter: blur(10px);
-      border-bottom:1px solid #eaeaea;
-    }
-    .nav{display:flex;align-items:center;justify-content:space-between; padding:14px 0}
-    .logo{display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.3px}
-    .logo-mark{
-      width:36px;height:36px;border-radius:10px;
-      background: conic-gradient(from 40deg, var(--brand) 0 40%, var(--brand-2) 40% 70%, #7ec8c1 70% 100%);
-      box-shadow: var(--shadow-sm);
-    }
-    .menu{display:flex; gap:18px; align-items:center}
-    .menu a{padding:8px 10px; border-radius:10px}
-    .menu a:hover{background:var(--accent)}
-    .cta{padding:10px 16px; border-radius:999px; background:var(--brand); color:#fff; font-weight:600; box-shadow:var(--shadow-sm)}
-    .cta:hover{opacity:.92}
-    .burger{display:none; background:none;border:0; font-size:24px}
-    @media (max-width:860px){
-      .menu{display:none}
-      .burger{display:block}
-      .mobile{display:none; position:absolute; inset: 64px 0 auto 0; padding:16px; background:#fff; border-bottom:1px solid #eee}
-      .mobile a{display:block; padding:12px 8px}
-      .mobile .cta{display:inline-block; margin-top:4px}
-      .mobile.open{display:block}
-    }
-
-    /* Hero */
-    .hero{
-      position:relative; isolation:isolate;
-      padding: clamp(56px, 7vw, 90px) 0 clamp(54px, 6vw, 80px);
-      background:
-        radial-gradient(1100px 400px at 80% -120px, #dff5f2 10%, transparent 70%),
-        radial-gradient(800px 360px at -10% -120px, #e7fbf7 10%, transparent 65%);
-    }
-    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:26px; align-items:center}
-    @media (max-width:940px){ .hero-grid{grid-template-columns:1fr} }
-    .hero h1{font-size: clamp(28px, 4vw, 44px); line-height:1.15; margin:0 0 12px}
-    .hero p.lead{font-size:clamp(16px, 2.2vw, 20px); color:var(--muted); margin:0 0 20px}
-    .hero .card{
-      background: var(--card); border:1px solid #eaeaea; border-radius: var(--radius); padding:18px;
-      box-shadow: var(--shadow);
-    }
-    .hero .benefits{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin-top:18px}
-    .pill{background:var(--accent); padding:10px 12px; border-radius:999px; font-size:13px; color:var(--brand); display:inline-flex; align-items:center; gap:8px}
-    .check{width:18px;height:18px; border-radius:999px; background:var(--brand); display:inline-grid; place-items:center; color:#fff; font-size:12px}
-
-    /* Sections */
-    section{padding: clamp(44px, 6vw, 84px) 0}
-    .section-title{font-size: clamp(22px, 3.2vw, 32px); margin:0 0 10px}
-    .section-sub{color:var(--muted); margin:0 0 20px}
-
-    /* Cards grid */
-    .grid{display:grid; gap:18px}
-    .grid-3{grid-template-columns: repeat(3, 1fr)}
-    .grid-4{grid-template-columns: repeat(4, 1fr)}
-    @media (max-width:980px){ .grid-4{grid-template-columns: repeat(2, 1fr)} }
-    @media (max-width:820px){ .grid-3{grid-template-columns: repeat(2, 1fr)} }
-    @media (max-width:560px){ .grid-3, .grid-4{grid-template-columns: 1fr} }
-    .card{
-      background:var(--card); border:1px solid #ececec; padding:18px; border-radius: var(--radius); box-shadow: var(--shadow-sm);
-    }
-    .card h3{margin:0 0 6px; font-size:18px}
-    .card p{margin:0; color:var(--muted)}
-
-    /* Process */
-    .steps{display:grid; gap:16px}
-    .step{display:grid; grid-template-columns: 48px 1fr; gap:14px; align-items:start}
-    .badge{width:48px;height:48px;border-radius:14px; display:grid; place-items:center; color:#fff; font-weight:700; background:linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow:var(--shadow-sm)}
-
-    /* Testimonials */
-    .testi{display:grid; gap:18px}
-    .quote{font-style:italic}
-    .person{display:flex; align-items:center; gap:12px; margin-top:10px}
-    .avatar{width:42px;height:42px;border-radius:50%; background:linear-gradient(135deg,#cfeee9,#eafaf7)}
-
-    /* Gallery */
-    .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
-    @media (max-width:720px){ .gallery{grid-template-columns:repeat(2,1fr)} }
-    .ph{
-      aspect-ratio: 4/3;
-      border-radius: 14px;
-      background:
-        linear-gradient(120deg,#eaf7f5,#f6fbfa);
-      border:1px solid #e8f0ee;
-      display:grid; place-items:center; color:#7daaa4; font-size:14px;
-    }
-
-    /* FAQ */
-    .faq{display:grid; gap:12px}
-    .faq details{background:#fff; border:1px solid #eaeaea; border-radius:12px; padding:12px 14px}
-    .faq summary{cursor:pointer; font-weight:600}
-    .faq p{color:var(--muted)}
-
-    /* Contact */
-    form{display:grid; gap:12px}
-    input, textarea, select{
-      padding:12px 14px; border:1px solid #dfe5e4; border-radius:12px; font:inherit; background:#fff
-    }
-    textarea{min-height:120px; resize:vertical}
-    .btn{padding:12px 16px; border:0; border-radius:12px; background:var(--brand); color:#fff; font-weight:700; box-shadow:var(--shadow-sm); cursor:pointer}
-    .btn:hover{opacity:.95}
-
-    /* Footer */
-    footer{background:#0f2e31; color:#e7f4f2; padding:28px 0}
-    footer a{color:#bef1e9}
-    .footer-grid{display:grid; grid-template-columns:2fr 1fr 1fr; gap:18px}
-    @media (max-width:820px){ .footer-grid{grid-template-columns:1fr 1fr} }
-    @media (max-width:560px){ .footer-grid{grid-template-columns:1fr} }
-
-    /* Floating actions */
-    .floating-cta{
-      position:fixed; right:18px; bottom:18px; z-index:60;
-      display:flex; flex-direction:column; gap:10px;
-    }
-    .fab{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:12px 16px; border-radius:999px; background:#25D366; color:#fff; font-weight:700; box-shadow:var(--shadow);
-    }
-    .fab.secondary{background:var(--brand)}
-    .note{font-size:12px; color:#617a7d}
-    .kicker{display:inline-block; padding:6px 10px; border-radius:999px; background:var(--accent); color:var(--brand); font-weight:700; font-size:12px}
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <div class="container nav" aria-label="Barra de navegación principal">
       <a class="logo" href="#inicio" aria-label="Ir a inicio">
-        <span class="logo-mark" aria-hidden="true"></span>
-        <span>Clínica San Agustín</span>
+        <img src="assets/logo_san_agustin_vertical_color.png" alt="Clínica San Agustín" style="height:36px; width:auto; display:block;">
       </a>
       <nav class="menu" aria-label="Menú">
         <a href="#servicios">Servicios</a>
@@ -202,10 +53,8 @@
           </div>
         </div>
         <div class="card" role="img" aria-label="Fotografía ilustrativa de un espacio cálido y seguro">
-          <div class="ph" style="aspect-ratio: 16/10">
-            <span>Tu espacio seguro</span>
-          </div>
-          <p class="note" style="margin-top:10px">Imágenes reales o ilustrativas del centro. Reemplaza este placeholder con fotos de instalaciones.</p>
+          <img src="assets/photo4.jpg" alt="Espacio seguro - Clínica San Agustín" style="border-radius:14px;">
+          <p class="note" style="margin-top:10px">Imágenes ilustrativas incluidas. Sustituye por tus fotos reales cuando gustes.</p>
         </div>
       </div>
     </section>
@@ -334,12 +183,12 @@
         <h2 class="section-title">Galería</h2>
         <p class="section-sub">Un vistazo a espacios que invitan a la calma.</p>
         <div class="gallery">
-          <div class="ph">Instalación 1</div>
-          <div class="ph">Instalación 2</div>
-          <div class="ph">Instalación 3</div>
-          <div class="ph">Áreas comunes</div>
-          <div class="ph">Habitaciones</div>
-          <div class="ph">Exteriores</div>
+          <img src="assets/photo1.jpeg" alt="Recepción - Clínica San Agustín">
+          <img src="assets/photo2.jpeg" alt="Área común - Clínica San Agustín">
+          <img src="assets/photo3.jpeg" alt="Habitaciones - Clínica San Agustín">
+          <img src="assets/photo4.jpeg" alt="Jardín / Exterior - Clínica San Agustín">
+          <img src="assets/photo5.jpeg" alt="Sala de terapia - Clínica San Agustín">
+          <img src="assets/photo6.jpeg" alt="Consultorio - Clínica San Agustín">
         </div>
       </div>
     </section>
@@ -403,9 +252,9 @@
           <div class="card">
             <h3>Ubicación y medios</h3>
             <p><strong>Clínica San Agustín</strong><br>Dirección: (Reemplaza con tu dirección completa)<br>Horario: Lun–Sáb · 9:00–19:00</p>
-            <p>Teléfono: <a href="tel:+52XXXXXXXXXX">+52 XX XXXX XXXX</a><br>
-            WhatsApp: <a href="https://wa.me/52XXXXXXXXXX" target="_blank" rel="noopener">Escríbenos</a><br>
-            Correo: <a href="mailto:contacto@sanagustinoficial.com">contacto@sanagustinoficial.com</a></p>
+            <p>Teléfono: <a href="tel:+522227113239">+52 222 711 3239</a><br>
+            WhatsApp: <a href="https://wa.me/522227113239" target="_blank" rel="noopener">Escríbenos</a><br>
+            Correo: <a href="mailto:miguelmexicano18@gmail.com">miguelmexicano18@gmail.com</a></p>
             <div class="ph" style="aspect-ratio:16/9; margin-top:10px">Mapa / Foto fachada</div>
           </div>
         </div>
@@ -446,7 +295,7 @@
   </footer>
 
   <div class="floating-cta" aria-label="Acciones rápidas">
-    <a class="fab" href="https://wa.me/52XXXXXXXXXX" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">💬 WhatsApp</a>
+    <a class="fab" href="https://wa.me/522227113239" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">💬 WhatsApp</a>
     <a class="fab secondary" href="#contacto" aria-label="Abrir formulario de contacto">📅 Agendar visita</a>
   </div>
 
@@ -458,8 +307,35 @@
     function handleSubmit(e){
       e.preventDefault();
       const data = Object.fromEntries(new FormData(e.target).entries());
-      // Simula un envío (puedes conectar a tu backend o a un servicio de forms)
-      alert("¡Gracias! Te contactaremos pronto, " + (data.nombre||"") + ".\n\nResumen:\nTel: " + (data.telefono||"") + "\nMotivo: " + (data.motivo||"") );
+      // Construye un mailto con subject y body
+      const to   = "miguelmexicano18@gmail.com";
+      const subj = encodeURIComponent("Nueva solicitud desde la web — " + (data.nombre||"Sin nombre"));
+      const body = encodeURIComponent(
+        "Nombre: " + (data.nombre||"") + "\n" +
+        "Teléfono/WhatsApp: " + (data.telefono||"") + "\n" +
+        "Motivo: " + (data.motivo||"") + "\n\n" +
+        "Mensaje:\n" + (data.mensaje||"")
+      );
+      const mailto = `mailto:${to}?subject=${subj}&body=${body}`;
+      // Intenta abrir el cliente de correo del usuario
+      window.location.href = mailto;
+
+      // Ofrece también abrir WhatsApp con el resumen
+      const waText = encodeURIComponent(
+        "Hola, soy " + (data.nombre||"") + ".\n" +
+        "Motivo: " + (data.motivo||"") + ".\n" +
+        "Mensaje: " + (data.mensaje||"") + ".\n" +
+        "Mi teléfono: " + (data.telefono||"")
+      );
+      const waLink = `https://wa.me/522227113239?text=${waText}`;
+
+      // Confirmación
+      setTimeout(()=>{
+        if(confirm("¿Deseas también enviarnos este mensaje por WhatsApp?")){
+          window.open(waLink, "_blank","noopener");
+        }
+      }, 300);
+
       e.target.reset();
     }
     document.getElementById('year').textContent = new Date().getFullYear();
