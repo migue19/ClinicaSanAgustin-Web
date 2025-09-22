@@ -458,6 +458,18 @@ footer a{
   }
 }
 
+/* Social links in footer */
+.social-list a {
+    color: var(--card);
+    background: transparent;
+    color: var(--card); /* fallback */
+    color: #f0dcae; /* matches footer link color */
+    text-decoration: none;
+}
+.social-list a:hover {
+    text-decoration: underline;
+}
+
 /* Floating actions */
 .floating-cta{
   position: fixed;
