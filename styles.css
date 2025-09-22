@@ -307,16 +307,19 @@ section{
   align-items: start;
 }
 
-.badge{
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  display: grid;
-  place-items: center;
-  color: #fff;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--brand), var(--brand-2));
-  box-shadow: var(--shadow-sm);
+.badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    background: linear-gradient(135deg, var(--brand), rgba(11,79,134,0.75));
+    box-shadow: 0 10px 24px rgba(11,79,134,0.12), inset 0 1px 0 rgba(255,255,255,0.06);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
 }
 
 /* Testimonials */
@@ -485,6 +488,16 @@ footer a{
 .note{
   font-size: 12px;
   color: #617a7d;
+  align-content: center;
+}
+
+.note.hero-caption {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px; /* un poco más grande */
+    margin-top: 10px; /* mantiene el espacio existente */
+    letter-spacing: 0.4px;
 }
 
 .kicker{
@@ -500,3 +513,21 @@ footer a{
 .box-shadow-brand{
   box-shadow: 0 12px 30px rgba(11,79,134,0.12);
 }
+
+/* Centrar y poner en negritas el texto que esté entre comillas.
+   Soporta el elemento <q> y también spans con la clase .in-quotes */
+.note q,
+.note .in-quotes {
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    font-size: inherit;
+    color: inherit;
+    margin-top: 10px;
+    /* opcional: usar comillas tipográficas automáticas para <q> */
+    quotes: "“" "”" "‘" "’";
+}
+/* Si usas <q> y no quieres comillas automáticas, descomenta esto:
+.note q::before,
+.note q::after { content: none; }
+*/
