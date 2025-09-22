@@ -119,8 +119,9 @@ header{
 }
 
 /* Mobile menu - hidden by default on desktop */
-.mobile{
-  display: none;
+.mobile {
+    display: none;
+    hidden: true;
 }
 
 @media (max-width: 860px) {
@@ -468,54 +469,35 @@ footer a{
   gap: 10px;
 }
 
-.fab{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 16px;
-  border-radius: 999px;
-  background: #25D366;
-  color: #fff;
-  font-weight: 700;
-  box-shadow: var(--shadow);
-}
-
-.fab.secondary{
-  background: var(--brand); /* botón flotante "Agendar" también en azul sólido */
-  color: #fff;
-}
-
-.note{
-  font-size: 12px;
-  color: #617a7d;
-  align-content: center;
-}
-
-.note.hero-caption {
-    text-transform: uppercase;
-    text-align: center;
+.fab {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 999px;
+    background: #25D366; /* WhatsApp verde */
+    color: #fff;
     font-weight: 700;
-    font-size: 14px; /* un poco más grande */
-    margin-top: 10px; /* mantiene el espacio existente */
-    letter-spacing: 0.4px;
+    box-shadow: var(--shadow);
+    text-decoration: none;
 }
 
-.kicker{
-  display: inline-block;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--brand);
-  font-weight: 700;
-  font-size: 12px;
+/* Botón secundario floante: azul sólido de marca */
+.fab.secondary {
+    background: var(--brand);
+    color: #fff;
 }
 
-.box-shadow-brand{
-  box-shadow: 0 12px 30px rgba(11,79,134,0.12);
+/* Accesibilidad: enfoque visible */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 3px solid rgba(11,79,134,0.18);
+    outline-offset: 2px;
 }
 
-/* Centrar y poner en negritas el texto que esté entre comillas.
-   Soporta el elemento <q> y también spans con la clase .in-quotes */
+/* Nota: regla que ya tenías para frases entre comillas */
 .note q,
 .note .in-quotes {
     display: block;
@@ -524,7 +506,6 @@ footer a{
     font-size: inherit;
     color: inherit;
     margin-top: 10px;
-    /* opcional: usar comillas tipográficas automáticas para <q> */
     quotes: "“" "”" "‘" "’";
 }
 /* Si usas <q> y no quieres comillas automáticas, descomenta esto:

@@ -11,9 +11,10 @@
   <header>
     <div class="container nav" aria-label="Barra de navegación principal">
       <a class="logo" href="#inicio" aria-label="Ir a inicio">
-        <img src="assets/logo_san_agustin_vertical_color.png" alt="Clínica San Agustín" style="height:36px; width:auto; display:block;">
+        <img src="assets/logo_san_agustin_vertical_color.png" alt="Clínica San Agustín" style="height:56px; width:auto; display:block;">
       </a>
-      <nav class="menu" aria-label="Menú">
+
+      <nav class="menu" aria-label="Menú principal">
         <a href="#servicios">Servicios</a>
         <a href="#condiciones">Condiciones</a>
         <a href="#proceso">Proceso</a>
@@ -22,9 +23,11 @@
         <a href="#faq">FAQ</a>
         <a class="cta" href="#contacto">Agendar visita</a>
       </nav>
-      <button class="burger" aria-label="Abrir menú" id="burger">☰</button>
+
+      <button class="burger" aria-label="Abrir menú" id="burger" aria-expanded="false">☰</button>
     </div>
-    <div class="mobile" id="mobileMenu" aria-label="Menú móvil">
+
+    <div class="mobile" id="mobileMenu" aria-label="Menú móvil" hidden>
       <a href="#servicios">Servicios</a>
       <a href="#condiciones">Condiciones</a>
       <a href="#proceso">Proceso</a>
@@ -54,7 +57,7 @@
         </div>
         <div class="card" role="img" aria-label="Fotografía ilustrativa de un espacio cálido y seguro">
           <img src="assets/placa.jpeg" alt="Espacio seguro - Clínica San Agustín" style="border-radius:14px;">
-          <p class="note" style="margin-top:10px">La adicción no es sobre la sustancia, es sobre la evasión. Es lo que usamos para no enfrentarnos a nuestra realidad.</p>
+          <p class="note" style="margin-top:10px">Creemos en la dignidad y el valor intrínseco de cada ser humano, sin importar su historia o situación actual.</p>
         </div>
       </div>
     </section>
@@ -219,45 +222,18 @@
 
     <section id="contacto">
       <div class="container">
-        <h2 class="section-title">Contacto y agendar visita</h2>
-        <p class="section-sub">Escríbenos y te responderemos a la brevedad.</p>
-        <div class="grid" style="grid-template-columns:1.1fr .9fr; gap:18px">
-          <form onsubmit="handleSubmit(event)" aria-label="Formulario de contacto">
-            <label>
-              <span>Nombre</span><br>
-              <input type="text" name="nombre" required aria-required="true" placeholder="Tu nombre">
-            </label>
-            <label>
-              <span>Teléfono / WhatsApp</span><br>
-              <input type="tel" name="telefono" required placeholder="+52 ...">
-            </label>
-            <label>
-              <span>Motivo de consulta</span><br>
-              <select name="motivo" required>
-                <option value="">Selecciona una opción</option>
-                <option>Alcohol</option>
-                <option>Estimulantes</option>
-                <option>Ansiedad / Depresión</option>
-                <option>Consulta de valoración</option>
-                <option>Otro</option>
-              </select>
-            </label>
-            <label>
-              <span>¿Qué te preocupa?</span><br>
-              <textarea name="mensaje" placeholder="Cuéntanos brevemente..."></textarea>
-            </label>
+        <h2 class="section-title">Contacto</h2>
+        <p class="section-sub">Agenda una evaluación inicial o solicita más información.</p>
+
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div style="display:grid; gap:8px; max-width:520px">
+            <input name="nombre" type="text" placeholder="Nombre" required>
+            <input name="telefono" type="tel" placeholder="Teléfono / WhatsApp" required>
+            <input name="motivo" type="text" placeholder="Motivo de consulta">
+            <textarea name="mensaje" placeholder="Mensaje (opcional)"></textarea>
             <button class="btn" type="submit">Enviar</button>
-            <p class="note">Al enviar aceptas nuestro aviso de privacidad.</p>
-          </form>
-          <div class="card">
-            <h3>Ubicación y medios</h3>
-            <p><strong>Clínica San Agustín</strong><br>Dirección: (Reemplaza con tu dirección completa)<br>Horario: Lun–Sáb · 9:00–19:00</p>
-            <p>Teléfono: <a href="tel:+522227113239">+52 222 711 3239</a><br>
-            WhatsApp: <a href="https://wa.me/522227113239" target="_blank" rel="noopener">Escríbenos</a><br>
-            Correo: <a href="mailto:miguelmexicano18@gmail.com">miguelmexicano18@gmail.com</a></p>
-            <div class="ph" style="aspect-ratio:16/9; margin-top:10px">Mapa / Foto fachada</div>
           </div>
-        </div>
+        </form>
       </div>
     </section>
   </main>
@@ -265,28 +241,12 @@
   <footer>
     <div class="container footer-grid">
       <div>
-        <div class="logo" style="color:#e7f4f2">
-          <img src="assets/icono_san_agustin_color.png" alt="Clínica San Agustín" style="height:40px; width:auto; display:block;">
-          <span>Clínica San Agustín</span>
-        </div>
-        <p style="margin:10px 0 0">Acompañamiento profesional y humano para recuperar tu bienestar.</p>
+        <img src="assets/logo_san_agustin_vertical_color.png" alt="Clínica San Agustín" style="height:48px; width:auto; display:block; margin-bottom:12px;">
+        <p>Atención humana · Confidencial</p>
       </div>
       <div>
-        <strong>Explora</strong>
-        <ul>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#proceso">Proceso</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </div>
-      <div>
-        <strong>Legal</strong>
-        <ul>
-          <li><a href="#aviso">Aviso de privacidad</a></li>
-          <li><a href="#cookies">Cookies</a></li>
-          <li><a href="#terminos">Términos</a></li>
-        </ul>
+        <strong>Contacto</strong>
+        <p>Tel: 222 711 3239</p>
       </div>
     </div>
     <div class="container" style="margin-top:10px; font-size:12px; opacity:.85">
@@ -302,43 +262,61 @@
   <script>
     const burger = document.getElementById('burger');
     const mobile = document.getElementById('mobileMenu');
-    burger?.addEventListener('click', ()=> mobile.classList.toggle('open'));
 
-    function handleSubmit(e){
+    // Toggle menú móvil y aria-expanded
+    burger?.addEventListener('click', () => {
+      const isOpen = mobile.classList.toggle('open');
+      mobile.hidden = !isOpen;
+      burger.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // Cerrar menú móvil al clicar un enlace
+    document.querySelectorAll('#mobileMenu a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobile.classList.remove('open');
+        mobile.hidden = true;
+        burger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Manejo del formulario: abre mailto y ofrece WhatsApp
+    function handleSubmit(e) {
       e.preventDefault();
       const data = Object.fromEntries(new FormData(e.target).entries());
-      // Construye un mailto con subject y body
-      const to   = "miguelmexicano18@gmail.com";
-      const subj = encodeURIComponent("Nueva solicitud desde la web — " + (data.nombre||"Sin nombre"));
+
+      const to = "miguelmexicano18@gmail.com";
+      const subj = encodeURIComponent("Nueva solicitud desde la web — " + (data.nombre || "Sin nombre"));
       const body = encodeURIComponent(
-        "Nombre: " + (data.nombre||"") + "\n" +
-        "Teléfono/WhatsApp: " + (data.telefono||"") + "\n" +
-        "Motivo: " + (data.motivo||"") + "\n\n" +
-        "Mensaje:\n" + (data.mensaje||"")
+        "Teléfono/WhatsApp: " + (data.telefono || "") + "\n" +
+        "Motivo: " + (data.motivo || "") + "\n\n" +
+        "Mensaje:\n" + (data.mensaje || "")
       );
       const mailto = `mailto:${to}?subject=${subj}&body=${body}`;
-      // Intenta abrir el cliente de correo del usuario
+
+      // intenta abrir cliente de correo
       window.location.href = mailto;
 
-      // Ofrece también abrir WhatsApp con el resumen
+      // prepara WhatsApp
       const waText = encodeURIComponent(
-        "Hola, soy " + (data.nombre||"") + ".\n" +
-        "Motivo: " + (data.motivo||"") + ".\n" +
-        "Mensaje: " + (data.mensaje||"") + ".\n" +
-        "Mi teléfono: " + (data.telefono||"")
+        "Hola, soy " + (data.nombre || "") + ".\n" +
+        "Motivo: " + (data.motivo || "") + ".\n" +
+        "Mensaje: " + (data.mensaje || "") + ".\n" +
+        "Mi teléfono: " + (data.telefono || "")
       );
       const waLink = `https://wa.me/522227113239?text=${waText}`;
 
-      // Confirmación
-      setTimeout(()=>{
-        if(confirm("¿Deseas también enviarnos este mensaje por WhatsApp?")){
-          window.open(waLink, "_blank","noopener");
+      setTimeout(() => {
+        if (confirm("¿Deseas también enviarnos este mensaje por WhatsApp?")) {
+          window.open(waLink, "_blank", "noopener");
         }
       }, 300);
 
       e.target.reset();
     }
-    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // año en footer
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
