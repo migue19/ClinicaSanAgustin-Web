@@ -3,18 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Clínica San Agustín — Recupera tu vida con acompañamiento profesional</title>
-  <meta name="description" content="Clínica San Agustín: tratamiento integral para adicciones y salud mental. Atención cálida, profesional y confidencial.">
+  <title>Clínica de Rehabilitación en Puebla | San Agustín</title>
+  <meta name="description" content="Clínica de rehabilitación en Puebla. Tratamientos de adicciones, psiquiatría y psicoterapia. Atención presencial y virtual. Agenda tu evaluación.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sanagustinoficial.com/">
 
   <!-- Open Graph / Social preview -->
-  <meta property="og:title" content="Clínica San Agustín — Recupera tu vida">
-  <meta property="og:description" content="Tratamiento integral para adicciones y salud mental. Atención cálida y confidencial.">
-  <meta property="og:image" content="assets/logo_san_agustin_vertical_color.png">
-  <meta property="og:url" content="https://tusitio.example/">
-  <meta property="og:site_name" content="Clínica San Agustín">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:title" content="Clínica de Rehabilitación en Puebla | San Agustín">
+  <meta property="og:description" content="Tratamientos de adicciones, psiquiatría y psicoterapia. Agenda tu evaluación.">
+  <meta property="og:url" content="https://sanagustinoficial.com/">
+  <meta property="og:image" content="https://sanagustinoficial.com/assets/og-cover.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Clínica de Rehabilitación en Puebla | San Agustín">
+  <meta name="twitter:description" content="Tratamientos de adicciones, psiquiatría y psicoterapia. Agenda tu evaluación.">
+  <meta name="twitter:image" content="https://sanagustinoficial.com/assets/og-cover.jpg">
 
+  <!-- HREFLANG -->
+  <link rel="alternate" href="https://sanagustinoficial.com/" hreflang="es-MX">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- PWA/ICO (opcional) -->
+  <link rel="icon" href="/assets/favicon.ico">
+  <meta name="theme-color" content="#0b5fff">
+
+  <!-- PERFORMANCE SENCILLO -->
+  <link rel="preload" href="/assets/hero.webp" as="image">
 </head>
 <body>
   <header>
@@ -338,5 +353,54 @@
   <!-- antes: <script> ...inline script... </script> -->
   <!-- ahora cargamos el script externo -->
   <script src="scripts.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://sanagustinoficial.com/#clinic",
+      "name": "Clínica San Agustín",
+      "url": "https://sanagustinoficial.com/",
+      "logo": "https://sanagustinoficial.com/assets/logo_san_agustin_vertical_color.png",
+      "telephone": "+52 220 285 5303",
+      "email": "administracion@sanagustinoficial.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Magnolias 13, Sta. Cruz Buenavista",
+        "addressLocality": "Heroica Puebla de Zaragoza",
+        "addressRegion": "Pue.",
+        "postalCode": "72150",
+        "addressCountry": "MX"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61574857032358&locale=es_LA"
+      ],
+      "openingHours": "Mo,Tu,We,Th,Fr 09:00-18:00"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuánto dura el tratamiento?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende del nivel de atención y tus necesidades. Tras la valoración clínica proponemos un plan y tiempos estimados."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Aceptan seguros?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contáctanos con tus datos y verificamos cobertura y formas de pago disponibles."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </body>
 </html>
