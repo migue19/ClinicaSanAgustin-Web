@@ -343,7 +343,7 @@ section { padding: clamp(56px, 7vw, 96px) 0; }
 @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
 
 /* ---------- Team ---------- */
-.team-card { display: flex; gap: 18px; align-items: center; }
+.team-card { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
 .team-card .photo {
   width: 88px;
   height: 88px;
